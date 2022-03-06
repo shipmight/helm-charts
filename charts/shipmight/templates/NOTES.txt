@@ -1,0 +1,13 @@
+Thank you for using Shipmight!
+
+You should be able to access Shipmight UI at:
+
+{{ if and .Values.ui.ingressPath .Values.ui.ingressHost -}}
+- http://{{ .Values.ui.ingressHost }}/{{ .Values.ui.ingressPath }}
+{{ else if .Values.ui.ingressHost -}}
+- http://{{ .Values.ui.ingressHost }}
+{{ else if .Values.ui.ingressPath -}}
+- http://<load-balancer-ip>/{{ .Values.ui.ingressPath }}
+{{ else -}}
+- Please define ingressHost and/or ingressPath to enable ingress for Shipmight UI
+{{ end -}}

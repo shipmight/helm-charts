@@ -1,0 +1,15 @@
+dependencies:
+- name: ingress-nginx
+  repository: https://kubernetes.github.io/ingress-nginx
+  version: 4.0.18
+- name: loki-stack
+  repository: https://grafana.github.io/helm-charts
+  version: 2.6.1
+- name: cert-manager
+  repository: https://charts.jetstack.io
+  version: v1.7.1
+- name: metrics-server
+  repository: https://kubernetes-sigs.github.io/metrics-server
+  version: 3.8.2
+digest: sha256:79c2f03ac3a3cdf61252bb173952ae025a2b1fc5b4f7a9029fd867f774c21fba
+generated: "2022-03-06T17:33:55.879821+02:00"

@@ -1,0 +1,49 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: {{ .Release.Namespace | quote }}
+  name: shipmight-ui
+  labels:
+    {{- include "shipmight.commonLabels" . | nindent 4 }}
+spec:
+  selector:
+    matchLabels:
+      {{- include "shipmight.uiSelectorLabels" . | nindent 6 }}
+  replicas: {{ .Values.ui.replicas }}
+  template:
+    metadata:
+      labels:
+        {{- include "shipmight.uiSelectorLabels" . | nindent 8 }}
+    spec:
+      automountServiceAccountToken: false
+      containers:
+        - name: shipmight-ui
+          image: {{ include "shipmight.image" . }}
+          {{ if .Values.image.pullPolicy }}
+          imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
+          {{ end }}
+          args: ['--ui']
+          ports:
+            - containerPort: 3000
+          resources: {{- toYaml .Values.ui.resources | nindent 12 }}
+          env:
+            - name: NODE_ENV
+              value: production
+            - name: LOG
+              value: "shipmight:"
+            - name: UI_API_PROXY_ENDPOINT
+              value: http://shipmight-api:3001
+            - name: UI_INGRESS_PATH
+              value: {{ .Values.ui.ingressPath | quote }}
+          readinessProbe:
+            httpGet:
+              path: {{ printf "%s/readyz" .Values.ui.ingressPath | quote }}
+              port: 3000
+              scheme: HTTP
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            timeoutSeconds: 1
+            successThreshold: 1
+            failureThreshold: 5
+      imagePullSecrets: {{- toYaml .Values.image.pullSecrets | nindent 8 }}

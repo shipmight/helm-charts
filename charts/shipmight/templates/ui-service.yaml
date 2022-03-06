@@ -1,0 +1,16 @@
+{{ if or .Values.ui.ingressPath .Values.ui.ingressHost }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: {{ .Release.Namespace | quote }}
+  name: shipmight-ui
+  labels:
+    {{- include "shipmight.commonLabels" . | nindent 4 }}
+spec:
+  selector:
+    {{- include "shipmight.uiSelectorLabels" . | nindent 4 }}
+  ports:
+    - port: 3000
+      protocol: TCP
+{{ end }}
