@@ -1,5 +1,11 @@
+{{- /*
+I do not understand why .Values.api.replicas is nil during install, when
+it has a default value in values.yaml. So, check for type. ¯\_(ツ)_/¯
+*/}}
+{{ if kindIs "int64" .Values.api.replicas }}
 {{ if ne .Values.api.replicas 1 }}
 {{ fail "Greater than 1 .api.replicas is not currently supported" }}
+{{ end }}
 {{ end }}
 ---
 apiVersion: apps/v1
