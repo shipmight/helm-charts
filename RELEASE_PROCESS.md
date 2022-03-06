@@ -31,7 +31,7 @@ Update version number in:
 Update `requirements.lock`:
 
 ```bash
-cd charts/shipmight-stack && helm dependency update && cd ../..
+cd charts/shipmight-stack && helm repo update && helm dependency update && cd ../..
 ```
 
 Commit and push:
