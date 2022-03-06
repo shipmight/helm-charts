@@ -13,7 +13,7 @@ Commit and push:
 
 ```bash
 git add -A
-git commit -m "Release shipmight vX.X.X"
+git commit -m "Release shipmight X.X.X"
 git push
 ```
 
@@ -38,7 +38,7 @@ Commit and push:
 
 ```bash
 git add -A
-git commit -m "Release shipmight-stack vX.X.X"
+git commit -m "Release shipmight-stack X.X.X"
 git push
 ```
 
