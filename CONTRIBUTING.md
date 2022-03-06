@@ -26,3 +26,9 @@ Now should be able to install as usual:
 ```bash
 helm install shipmight-test charts/shipmight-stack -n shipmight --create-namespace
 ```
+
+Start a minikube cluster:
+
+```bash
+minikube start --kubernetes-version=v1.21.4
+```
