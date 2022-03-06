@@ -28,7 +28,7 @@ Update version number in:
 - [`Chart.yaml`](charts/shipmight-stack/Chart.yaml) → `version`
 - [`Chart.yaml`](charts/shipmight-stack/Chart.yaml) → `dependencies[0].version`
 
-Update `dependencies.lock`:
+Update `requirements.lock`:
 
 ```bash
 cd charts/shipmight-stack && helm dependency update
