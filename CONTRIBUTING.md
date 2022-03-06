@@ -30,5 +30,5 @@ helm install shipmight-test charts/shipmight-stack -n shipmight --create-namespa
 Start a minikube cluster:
 
 ```bash
-minikube start --kubernetes-version=v1.21.4
+minikube start --memory 4gb --cpus 2 --kubernetes-version=v1.21.4
 ```
