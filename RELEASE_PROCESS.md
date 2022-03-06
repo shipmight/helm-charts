@@ -6,6 +6,7 @@ This process should be followed to release updated charts after a new version of
 
 Update version number in:
 
+- [`Chart.yaml`](charts/shipmight/Chart.yaml) → `version`
 - [`values.yaml`](charts/shipmight/values.yaml) → `image.tag`
 
 Commit and push:
