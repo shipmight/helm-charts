@@ -1,7 +1,7 @@
 dependencies:
 - name: shipmight
   repository: https://shipmight.github.io/helm-charts
-  version: 0.1.4
+  version: 0.1.5
 - name: ingress-nginx
   repository: https://kubernetes.github.io/ingress-nginx
   version: 4.0.18
@@ -14,5 +14,5 @@ dependencies:
 - name: metrics-server
   repository: https://kubernetes-sigs.github.io/metrics-server
   version: 3.8.2
-digest: sha256:74ab868c986db30f52bf5b186aa2420fde0405a08234497429949c03e18c64a2
-generated: "2022-03-06T19:29:25.505956+02:00"
+digest: sha256:cf16cb05cb69b17447cdc5c2d5d3b95c4f2b9d3e5a4ef5367f05bd38d69050ef
+generated: "2022-03-07T13:25:29.206138+02:00"
