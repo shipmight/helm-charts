@@ -12,10 +12,14 @@ dependencies:
     name: ingress-nginx
     version: "^4.0.0"
     condition: ingress-nginx.enabled
-  - repository: "https://grafana.github.io/helm-charts"
-    name: loki-stack
-    version: "^2.5.0"
-    condition: loki-stack.enabled
+  - name: "loki"
+    repository: "https://grafana.github.io/helm-charts"
+    version: "^2.3.0"
+    condition: loki.enabled
+  - name: "promtail"
+    repository: "https://grafana.github.io/helm-charts"
+    version: "^2.2.0"
+    condition: promtail.enabled
   - repository: "https://charts.jetstack.io"
     name: cert-manager
     version: "^1.6.1"
