@@ -34,6 +34,8 @@ Env
   value: {{ .Values.api.uuidLength | quote }}
 - name: DOMAINS_INGRESS_CLASS
   value: {{ .Values.domains.ingressClass | quote }}
+- name: LOKI_ENDPOINT
+  value: {{ .Values.loki.endpoint | quote }}
 - name: AUTH_JWT_SECRET
   valueFrom:
     secretKeyRef:

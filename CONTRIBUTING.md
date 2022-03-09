@@ -13,13 +13,11 @@ Manually point shipmight-stack to use local version:
 - repository: "file://../shipmight"
 ```
 
-Update `requirements.lock`:
+If you make changes to the shipmight-chart (not shipmight-stack), you need to rebuild the deps folder:
 
 ```bash
 cd charts/shipmight-stack && helm dependency update && cd ../..
 ```
-
-You need to run that command after every change to shipmight-chart.
 
 Now should be able to install as usual:
 
