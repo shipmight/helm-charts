@@ -119,7 +119,7 @@ cert-manager:
         memory: 64Mi
 
 metrics-server:
-  enabled: true
+  enabled: false
   resources:
     limits:
       cpu: 10m
