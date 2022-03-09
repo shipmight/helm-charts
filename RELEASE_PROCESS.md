@@ -28,6 +28,18 @@ Update version number in:
 - [`Chart.yaml`](charts/shipmight-stack/Chart.yaml) → `version`
 - [`Chart.yaml`](charts/shipmight-stack/Chart.yaml) → `dependencies[0].version`
 
+Update `requirements.lock`:
+
+```bash
+cd charts/shipmight-stack && helm repo update && helm dependency update && cd ../..
+```
+
+If you get error "can't get a valid version for repositories shipmight", the shipmight chart hasn't updated yet in GitHub Pages. Wait a minute and run the latter part again:
+
+```bash
+helm dependency update && cd ../..
+```
+
 Commit and push:
 
 ```bash
