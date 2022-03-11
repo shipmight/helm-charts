@@ -39,7 +39,7 @@ api:
   # Deployment params
   replicas: 1
   resources:
-    limits: { memory: "100Mi", cpu: "400m" }
+    limits: { memory: "400Mi", cpu: "100m" }
     requests: { memory: "75Mi", cpu: "10m" }
 
 install:
