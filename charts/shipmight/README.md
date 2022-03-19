@@ -24,6 +24,13 @@ See also [Shipmight stack](../shipmight-stack/README.md).
 | `auth.initialAdminPass` | `"admin"` |                                                                                         |
 | `auth.jwtSecret`        | `""`      | JWT secret for verifying and generating auth tokens                                     |
 
+### Auto-update
+
+| Option                  | Default                                     | Description                                           |
+| ----------------------- | ------------------------------------------- | ----------------------------------------------------- |
+| `autoUpdate.enabled`    | `true`                                      | Allow users to update Shipmight from the Manage-page. |
+| `autoUpdate.repository` | `"https://shipmight.github.io/helm-charts"` |                                                       |
+
 ### Shipmight UI
 
 | Option           | Default       | Description                                                                                    |

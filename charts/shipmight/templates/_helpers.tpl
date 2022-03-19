@@ -28,6 +28,14 @@ Env
 
 # duplicate env used in api and installer
 {{- define "shipmight.apiEnv" }}
+- name: RELEASE_NAMESPACE
+  value: {{ .Release.Namespace | quote }}
+- name: RELEASE_NAME
+  value: {{ .Release.name | quote }}
+- name: AUTO_UPDATE_ENABLED
+  value: {{ ternary "true" "false" .Values.autoUpdate.enabled | quote }}
+- name: AUTO_UPDATE_REPOSITORY
+  value: {{ .Values.autoUpdate.repository | quote }}
 - name: API_READABLE_UUIDS
   value: {{ ternary "true" "false" .Values.api.readableUuids | quote }}
 - name: API_UUID_LENGTH
