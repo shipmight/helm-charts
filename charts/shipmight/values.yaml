@@ -12,6 +12,10 @@ auth:
   initialAdminPass: admin
   jwtSecret: ""
 
+autoUpdate:
+  enabled: true
+  repository: "https://shipmight.github.io/helm-charts"
+
 ui:
   ingressPath: shipmight
   ingressHost: ""
