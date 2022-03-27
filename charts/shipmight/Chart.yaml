@@ -1,4 +1,4 @@
-apiVersion: v1
+apiVersion: v2
 name: shipmight
-version: "0.1.13"
-kubeVersion: ">= v1.21.4"
+version: "0.1.14"
+kubeVersion: ">= 1.21.4 < 1.22.0"
