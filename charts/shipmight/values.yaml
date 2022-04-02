@@ -3,7 +3,7 @@
 image:
   registry: ghcr.io
   repository: shipmight/shipmight
-  tag: "0.1.14"
+  tag: "0.1.15"
   pullPolicy: IfNotPresent
   pullSecrets: []
 
@@ -11,6 +11,10 @@ auth:
   initialAdminUser: admin
   initialAdminPass: admin
   jwtSecret: ""
+
+autoUpdate:
+  enabled: true
+  repository: "https://shipmight.github.io/helm-charts"
 
 ui:
   ingressPath: shipmight
