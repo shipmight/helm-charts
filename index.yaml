@@ -115,6 +115,39 @@ entries:
     version: 0.1.2
   shipmight-stack:
   - apiVersion: v2
+    created: "2022-05-08T11:50:09.052631746Z"
+    dependencies:
+    - condition: shipmight.enabled
+      name: shipmight
+      repository: https://shipmight.github.io/helm-charts
+      version: 0.1.16
+    - condition: ingress-nginx.enabled
+      name: ingress-nginx
+      repository: https://kubernetes.github.io/ingress-nginx
+      version: 4.0.18
+    - condition: loki.enabled
+      name: loki
+      repository: https://grafana.github.io/helm-charts
+      version: 2.10.1
+    - condition: promtail.enabled
+      name: promtail
+      repository: https://grafana.github.io/helm-charts
+      version: 2.2.0
+    - condition: cert-manager.enabled
+      name: cert-manager
+      repository: https://charts.jetstack.io
+      version: v1.7.1
+    - condition: metrics-server.enabled
+      name: metrics-server
+      repository: https://kubernetes-sigs.github.io/metrics-server
+      version: 3.8.2
+    digest: 27b9a88f98dc924d2c5347174edb67d1f120ed745700f5ff150df2e1d5a7efd9
+    kubeVersion: '>= 1.21.4 < 1.22.0'
+    name: shipmight-stack
+    urls:
+    - https://github.com/shipmight/helm-charts/releases/download/shipmight-stack-0.1.16/shipmight-stack-0.1.16.tgz
+    version: 0.1.16
+  - apiVersion: v2
     created: "2022-04-02T14:39:28.514419799Z"
     dependencies:
     - condition: shipmight.enabled
@@ -268,4 +301,4 @@ entries:
     urls:
     - https://github.com/shipmight/helm-charts/releases/download/shipmight-stack-0.1.2/shipmight-stack-0.1.2.tgz
     version: 0.1.2
-generated: "2022-05-08T11:48:16.504365035Z"
+generated: "2022-05-08T11:50:09.052862948Z"
