@@ -32,8 +32,6 @@ Env
   value: {{ .Release.Namespace | quote }}
 - name: RELEASE_NAME
   value: {{ .Release.name | quote }}
-- name: SELF_UPDATE_ENABLED
-  value: {{ ternary "true" "false" .Values.selfUpdate.enabled | quote }}
 - name: SELF_UPDATE_REPOSITORY
   value: {{ .Values.selfUpdate.repository | quote }}
 - name: API_READABLE_UUIDS

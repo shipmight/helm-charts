@@ -36,10 +36,9 @@
     "selfUpdate": {
       "type": "object",
       "properties": {
-        "enabled": { "type": "boolean" },
         "repository": { "type": "string" }
       },
-      "required": ["enabled", "repository"]
+      "required": ["repository"]
     },
 
     "ui": {
