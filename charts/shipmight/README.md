@@ -54,15 +54,6 @@ Also see [Deployment parameters](#deployment-parameters).
 | ---------------------- | ----------------- | ------------------------------------------ |
 | `domains.ingressClass` | `"ingress-nginx"` | Currently only ingress-nginx is supported. |
 
-### ACME ClusterIssuer
-
-| Option                                | Default                                            | Description                                                       |
-| ------------------------------------- | -------------------------------------------------- | ----------------------------------------------------------------- |
-| `acmeClusterIssuer.enabled`           | `false`                                            | If true, Let’s Encrypt `ClusterIssuer` is installed               |
-| `acmeClusterIssuer.adminEmailAddress` | `""`                                               | Email address to which Let’s Encrypt may send email notifications |
-| `acmeClusterIssuer.name`              | `"Let’s Encrypt"`                                  |                                                                   |
-| `acmeClusterIssuer.server`            | `"https://acme-v02.api.letsencrypt.org/directory"` | Defaults to Let’s Encrypt production API                          |
-
 ### Loki
 
 | Option          | Default | Description                                                                   |

@@ -30,12 +30,6 @@ domains:
 loki:
   endpoint: ""
 
-acmeClusterIssuer:
-  enabled: false
-  adminEmailAddress: ""
-  name: "Let’s Encrypt"
-  server: "https://acme-v02.api.letsencrypt.org/directory"
-
 api:
   readableUuids: true
   uuidLength: 5
