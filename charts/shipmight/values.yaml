@@ -12,7 +12,7 @@ auth:
   initialAdminPass: admin
   jwtSecret: ""
 
-autoUpdate:
+selfUpdate:
   enabled: true
   repository: "https://shipmight.github.io/helm-charts"
 

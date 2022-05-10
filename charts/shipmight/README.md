@@ -26,10 +26,9 @@ See also [Shipmight stack](../shipmight-stack/README.md).
 
 ### Auto-update
 
-| Option                  | Default                                     | Description                                           |
-| ----------------------- | ------------------------------------------- | ----------------------------------------------------- |
-| `autoUpdate.enabled`    | `true`                                      | Allow users to update Shipmight from the Manage-page. |
-| `autoUpdate.repository` | `"https://shipmight.github.io/helm-charts"` |                                                       |
+| Option                  | Default                                     | Description                                                                                                                    |
+| ----------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| `selfUpdate.repository` | `"https://shipmight.github.io/helm-charts"` | Allow users to update Shipmight from this chart repository from the Manage-page. Set to `null` or an emptry string to disable. |
 
 ### Shipmight UI
 
