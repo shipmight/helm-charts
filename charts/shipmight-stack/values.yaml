@@ -84,7 +84,7 @@ promtail:
       memory: 128Mi
 
 cert-manager:
-  enabled: true
+  enabled: false
   installCRDs: true
   resources:
     limits:
