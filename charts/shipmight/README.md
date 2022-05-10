@@ -65,9 +65,9 @@ Also see [Deployment parameters](#deployment-parameters).
 
 ### Loki
 
-| Option          | Default | Description |
-| --------------- | ------- | ----------- |
-| `loki.endpoint` | `""`    |             |
+| Option          | Default | Description                                                                   |
+| --------------- | ------- | ----------------------------------------------------------------------------- |
+| `loki.endpoint` | `""`    | Enable Loki-integration by defining the Loki HTTP API endpoint in this value. |
 
 ### Deployment parameters
 
