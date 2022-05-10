@@ -29,7 +29,7 @@ domains:
   ingressClass: ingress-nginx
 
 loki:
-  endpoint: http://shipmight-loki:3100
+  endpoint: ""
 
 acmeClusterIssuer:
   enabled: false

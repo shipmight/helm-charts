@@ -65,9 +65,9 @@ Also see [Deployment parameters](#deployment-parameters).
 
 ### Loki
 
-| Option          | Default                        | Description |
-| --------------- | ------------------------------ | ----------- |
-| `loki.endpoint` | `"http://shipmight-loki:3100"` |             |
+| Option          | Default | Description |
+| --------------- | ------- | ----------- |
+| `loki.endpoint` | `""`    |             |
 
 ### Deployment parameters
 
