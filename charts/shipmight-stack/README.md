@@ -1,6 +1,6 @@
 # Shipmight Stack Helm Chart
 
-This chart installs Shipmight and the following resources:
+This chart installs Shipmight and the following optional resources:
 
 - Ingress-NGINX
 - Loki
