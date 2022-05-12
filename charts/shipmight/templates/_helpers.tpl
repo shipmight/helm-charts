@@ -26,35 +26,50 @@ shipmight/component: ui
 Env
 */}}
 
-# duplicate env used in api and installer
-{{- define "shipmight.apiEnv" }}
+
+# Env used in all containers
+{{- define "shipmight.commonEnv" }}
+- name: NODE_ENV
+  value: production
+- name: LOG
+  value: "shipmight:"
+{{ end -}}
+
+# Env used in api and installer
+{{- define "shipmight.configEnv" }}
 - name: RELEASE_NAMESPACE
   value: {{ .Release.Namespace | quote }}
 - name: RELEASE_NAME
   value: {{ .Release.name | quote }}
 - name: SELF_UPDATE_REPOSITORY
-  value: {{ .Values.selfUpdate.repository | quote }}
-- name: API_READABLE_UUIDS
-  value: {{ ternary "true" "false" .Values.api.readableUuids | quote }}
-- name: API_UUID_LENGTH
-  value: {{ .Values.api.uuidLength | quote }}
-- name: DOMAINS_INGRESS_CLASS
-  value: {{ .Values.domains.ingressClass | quote }}
+  value: {{ .Values.config.selfUpdateRepository | quote }}
+- name: READABLE_UUIDS
+  value: {{ ternary "true" "false" .Values.config.readableUuids | quote }}
+- name: UUID_LENGTH
+  value: {{ .Values.config.uuidLength | quote }}
 - name: LOKI_ENDPOINT
-  value: {{ .Values.loki.endpoint | quote }}
-- name: AUTH_JWT_SECRET
+  value: {{ .Values.config.lokiEndpoint | quote }}
+- name: JWT_SECRET
   valueFrom:
     secretKeyRef:
       name: shipmight-secrets
-      key: AUTH_JWT_SECRET
-- name: AUTH_INITIAL_ADMIN_USER
+      key: JWT_SECRET
+- name: INITIAL_ADMIN_USER
   valueFrom:
     secretKeyRef:
       name: shipmight-secrets
-      key: AUTH_INITIAL_ADMIN_USER
-- name: AUTH_INITIAL_ADMIN_PASS
+      key: INITIAL_ADMIN_USER
+- name: INITIAL_ADMIN_PASS
   valueFrom:
     secretKeyRef:
       name: shipmight-secrets
-      key: AUTH_INITIAL_ADMIN_PASS
+      key: INITIAL_ADMIN_PASS
+{{ end -}}
+
+# Env used in ui
+{{- define "shipmight.uiEnv" }}
+- name: UI_API_PROXY_ENDPOINT
+  value: http://shipmight-api:3001
+- name: UI_INGRESS_PATH
+  value: {{ .Values.ui.ingress.path | quote }}
 {{ end -}}

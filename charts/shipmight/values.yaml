@@ -1,5 +1,3 @@
-# yaml-language-server: $schema=values.schema.json
-
 image:
   registry: ghcr.io
   repository: shipmight/shipmight
@@ -7,39 +5,51 @@ image:
   pullPolicy: IfNotPresent
   pullSecrets: []
 
-auth:
+config:
   initialAdminUser: admin
   initialAdminPass: admin
   jwtSecret: ""
 
-selfUpdate:
-  repository: "https://shipmight.github.io/helm-charts"
+  selfUpdateRepository: "https://shipmight.github.io/helm-charts"
+
+  lokiEndpoint: ""
+
+  readableUuids: true
+  uuidLength: 5
 
 ui:
-  ingressPath: shipmight
-  ingressHost: ""
-  # Deployment params
+  enabled: true
+
   replicas: 1
+
   resources:
     limits: { memory: "100Mi", cpu: "100m" }
     requests: { memory: "75Mi", cpu: "10m" }
 
-domains:
-  ingressClass: ingress-nginx
+  ingress:
+    enabled: true
+    extraAnnotations: {}
+    extraLabels: {}
 
-loki:
-  endpoint: ""
+    path: /shipmight
+    pathType: Prefix
+
+    hosts: []
+
+    tls: []
 
 api:
-  readableUuids: true
-  uuidLength: 5
-  # Deployment params
+  enabled: true
+
   replicas: 1
+
   resources:
     limits: { memory: "400Mi", cpu: "100m" }
     requests: { memory: "75Mi", cpu: "10m" }
 
 install:
+  enabled: true
+
   resources:
     limits: { memory: "100Mi", cpu: "100m" }
     requests: { memory: "75Mi", cpu: "10m" }

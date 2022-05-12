@@ -1,3 +1,4 @@
+{{ if .Values.ui.enabled }}
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -28,14 +29,8 @@ spec:
             - containerPort: 3000
           resources: {{- toYaml .Values.ui.resources | nindent 12 }}
           env:
-            - name: NODE_ENV
-              value: production
-            - name: LOG
-              value: "shipmight:"
-            - name: UI_API_PROXY_ENDPOINT
-              value: http://shipmight-api:3001
-            - name: UI_INGRESS_PATH
-              value: {{ .Values.ui.ingressPath | quote }}
+            {{ include "shipmight.commonEnv" . | nindent 12 }}
+            {{ include "shipmight.uiEnv" . | nindent 12 }}
           readinessProbe:
             httpGet:
               path: {{ printf "%s/readyz" .Values.ui.ingressPath | quote }}
@@ -47,3 +42,4 @@ spec:
             successThreshold: 1
             failureThreshold: 5
       imagePullSecrets: {{- toYaml .Values.image.pullSecrets | nindent 8 }}
+{{ end }}

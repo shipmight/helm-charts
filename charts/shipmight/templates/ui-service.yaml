@@ -1,4 +1,4 @@
-{{ if or .Values.ui.ingressPath .Values.ui.ingressHost }}
+{{ if .Values.ui.ingress.enabled }}
 ---
 apiVersion: v1
 kind: Service

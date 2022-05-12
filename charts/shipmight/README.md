@@ -16,57 +16,16 @@ See also [Shipmight stack](../shipmight-stack/README.md).
 | `image.pullPolicy`  | `"IfNotPresent"`        | Shipmight image pull policy  |
 | `image.pullSecrets` | `[]`                    | Shipmight image pull secrets |
 
-### User authentication
+### Shipmight configuration
 
-| Option                  | Default   | Description                                                                             |
-| ----------------------- | --------- | --------------------------------------------------------------------------------------- |
-| `auth.initialAdminUser` | `"admin"` | Upon installation an admin user is created. User must change password upon first login. |
-| `auth.initialAdminPass` | `"admin"` |                                                                                         |
-| `auth.jwtSecret`        | `""`      | JWT secret for verifying and generating auth tokens                                     |
+| Option     | Default | Description                                                                           |
+| ---------- | ------- | ------------------------------------------------------------------------------------- |
+| `config.*` |         | Refer to [Shipmight documentation](https://shipmight.com/docs/configuring-shipmight). |
 
-### Auto-update
+### Components
 
-| Option                  | Default                                     | Description                                                                                                          |
-| ----------------------- | ------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| `selfUpdate.repository` | `"https://shipmight.github.io/helm-charts"` | Allow users to update Shipmight from this chart repository from the Manage-page. Set to an emptry string to disable. |
-
-### Shipmight UI
-
-| Option           | Default       | Description                                                                                    |
-| ---------------- | ------------- | ---------------------------------------------------------------------------------------------- |
-| `ui.ingressPath` | `"shipmight"` | Path to use in Shipmight UI ingress. No leading or trailing slash. Can be set to empty string. |
-| `ui.ingressHost` |               | Host to use in Shipmight UI ingress.                                                           |
-
-Also see [Deployment parameters](#deployment-parameters).
-
-### Shipmight API
-
-| Option              | Default | Description                                                                     |
-| ------------------- | ------- | ------------------------------------------------------------------------------- |
-| `api.readableUuids` | `true`  | If true, UUIDs include a slug-version of the resource name, e.g. `my-app-87df3` |
-| `api.uuidLength`    | `5`     | Amount of random characters in the UUID                                         |
-
-Also see [Deployment parameters](#deployment-parameters).
-
-### Domains
-
-| Option                 | Default           | Description                                |
-| ---------------------- | ----------------- | ------------------------------------------ |
-| `domains.ingressClass` | `"ingress-nginx"` | Currently only ingress-nginx is supported. |
-
-### Loki
-
-| Option          | Default | Description                                                                   |
-| --------------- | ------- | ----------------------------------------------------------------------------- |
-| `loki.endpoint` | `""`    | Enable Loki-integration by defining the Loki HTTP API endpoint in this value. |
-
-### Deployment parameters
-
-| Option                   | Default                            | Description |
-| ------------------------ | ---------------------------------- | ----------- |
-| `ui.replicas`            | `1`                                |             |
-| `ui.resources.limits`    | `{ memory: "100Mi", cpu: "100m" }` |             |
-| `ui.resources.requests`  | `{ memory: "100Mi", cpu: "100m" }` |             |
-| `api.replicas`           | `1`                                |             |
-| `api.resources.limits`   | `{ memory: "100Mi", cpu: "100m" }` |             |
-| `api.resources.requests` | `{ memory: "100Mi", cpu: "100m" }` |             |
+| Option      | Default                             | Description |
+| ----------- | ----------------------------------- | ----------- |
+| `ui.*`      | Refer to [values.yaml](values.yaml) |             |
+| `admin.*`   | Refer to [values.yaml](values.yaml) |             |
+| `install.*` | Refer to [values.yaml](values.yaml) |             |
