@@ -2,11 +2,11 @@
 
 This chart installs Shipmight and the following optional resources:
 
-- Ingress-NGINX
+- Ingress-NGINX (enabled by default)
 - Loki
 - Promtail
 - Cert-Manager
-- metrics-server
+- Metrics Server
 
 This is the recommended installation chart for most users, because it comes pre-configured with all the dependencies.
 
