@@ -40,7 +40,7 @@ Env
 - name: RELEASE_NAMESPACE
   value: {{ .Release.Namespace | quote }}
 - name: RELEASE_NAME
-  value: {{ .Release.name | quote }}
+  value: {{ .Release.Name | quote }}
 - name: SELF_UPDATE_REPOSITORY
   value: {{ .Values.config.selfUpdateRepository | quote }}
 - name: READABLE_UUIDS
