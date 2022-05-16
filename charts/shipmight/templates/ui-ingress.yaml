@@ -26,7 +26,7 @@ spec:
           {{ if gt (len $.Values.ui.ingress.hosts) 0 -}}
           host: {{ index $.Values.ui.ingress.hosts $i }}
           {{ end -}}
-          path: {{ .Values.ui.ingress.path | quote }}
+          path: {{ $.Values.ui.ingress.path | quote }}
           backend:
             service:
               name: shipmight-ui
