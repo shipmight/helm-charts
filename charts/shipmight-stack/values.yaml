@@ -14,7 +14,7 @@ ingress-nginx:
 
 # https://grafana.com/docs/loki/latest/configuration/examples/#almost-zero-dependencyyaml
 loki:
-  enabled: true
+  enabled: false
   config:
     auth_enabled: false
     server:
@@ -74,7 +74,7 @@ loki:
       memory: 128Mi
 
 promtail:
-  enabled: true
+  enabled: false
   resources:
     limits:
       cpu: 200m
@@ -84,7 +84,7 @@ promtail:
       memory: 128Mi
 
 cert-manager:
-  enabled: true
+  enabled: false
   installCRDs: true
   resources:
     limits:
