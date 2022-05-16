@@ -17,7 +17,7 @@ metadata:
     {{ $key }}: {{ $value | quote }}
     {{- end }}
 spec:
-  tls: {{ toYaml .Values.ui.ingress.tls $ | nindent 4 }}
+  tls: {{ toYaml .Values.ui.ingress.tls | nindent 4 }}
   rules:
 {{- range $i := until (int (max 1 (len .Values.ui.ingress.hosts))) }}
     - http:
