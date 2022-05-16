@@ -22,7 +22,7 @@ spec:
 {{- range $i := until (int (max 1 (len .Values.ui.ingress.hosts))) }}
     - http:
         paths:
-        - pathType: Prefix
+        - pathType: {{ $.Values.ui.ingress.pathType | quote }}
           {{ if gt (len $.Values.ui.ingress.hosts) 0 -}}
           host: {{ index $.Values.ui.ingress.hosts $i }}
           {{ end -}}

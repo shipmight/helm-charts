@@ -33,7 +33,7 @@ spec:
             {{ include "shipmight.uiEnv" . | nindent 12 }}
           readinessProbe:
             httpGet:
-              path: {{ printf "%s/readyz" .Values.ui.ingressPath | quote }}
+              path: {{ printf "%s/readyz" (trimSuffix "/" .Values.ui.ingress.path) | quote }}
               port: 3000
               scheme: HTTP
             initialDelaySeconds: 10
