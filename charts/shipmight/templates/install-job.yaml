@@ -1,3 +1,4 @@
+{{ if .Values.install.enabled }}
 # TODO, maybe prefer a graphical installer instead? or both?
 apiVersion: batch/v1
 kind: Job
@@ -22,10 +23,7 @@ spec:
           args: ['--install']
           resources: {{- toYaml .Values.install.resources | nindent 12 }}
           env:
-            - name: NODE_ENV
-              value: production
-            - name: LOG
-              value: "shipmight:"
-            {{ include "shipmight.apiEnv" . | nindent 12 }}
+            {{ include "shipmight.commonEnv" . | nindent 12 }}
+            {{ include "shipmight.configEnv" . | nindent 12 }}
       imagePullSecrets: {{- toYaml .Values.image.pullSecrets | nindent 8 }}
-
+{{ end }}

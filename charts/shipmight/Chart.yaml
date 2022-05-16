@@ -1,4 +1,4 @@
 apiVersion: v2
 name: shipmight
-version: "0.1.16"
+version: "0.2.0"
 kubeVersion: ">= 1.21.4 < 1.22.0"

@@ -1,4 +1,5 @@
-{{ if or .Values.ui.ingressPath .Values.ui.ingressHost }}
+{{ if .Values.ui.enabled }}
+{{ if .Values.ui.ingress.enabled }}
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -7,21 +8,30 @@ metadata:
   name: shipmight-ui
   labels:
     {{- include "shipmight.commonLabels" . | nindent 4 }}
+    {{- range $key, $value := .Values.ui.ingress.extraLabels }}
+    {{ $key }}: {{ $value | quote }}
+    {{- end }}
   annotations:
     kubernetes.io/ingress.class: nginx
+    {{- range $key, $value := .Values.ui.ingress.extraAnnotations }}
+    {{ $key }}: {{ $value | quote }}
+    {{- end }}
 spec:
+  tls: {{ toYaml .Values.ui.ingress.tls $ | nindent 4 }}
   rules:
-  - http:
-      paths:
-      - pathType: Prefix
-        {{ if .Values.ui.ingressHost }}
-        host: {{ .Values.ui.ingressHost | quote }}
-        {{ end }}
-        path: {{ printf "/%s" .Values.ui.ingressPath | quote }}
-        backend:
-          service:
-            name: shipmight-ui
-            port:
-              number: 3000
-
+{{- range $i := until (int (max 1 (len .Values.ui.ingress.hosts))) }}
+    - http:
+        paths:
+        - pathType: Prefix
+          {{ if gt (len $.Values.ui.ingress.hosts) 0 -}}
+          host: {{ index $.Values.ui.ingress.hosts $i }}
+          {{ end -}}
+          path: {{ .Values.ui.ingress.path | quote }}
+          backend:
+            service:
+              name: shipmight-ui
+              port:
+                number: 3000
+{{- end }}
+{{ end }}
 {{ end }}

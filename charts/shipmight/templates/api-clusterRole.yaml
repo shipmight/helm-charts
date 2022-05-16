@@ -1,3 +1,4 @@
+{{ if .Values.api.enabled }}
 ---
 apiVersion: v1
 kind: ServiceAccount
@@ -41,3 +42,4 @@ roleRef:
   kind: ClusterRole
   name: shipmight-api
   apiGroup: rbac.authorization.k8s.io
+{{ end }}

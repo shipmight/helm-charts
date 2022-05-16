@@ -1,4 +1,5 @@
-{{ if or .Values.ui.ingressPath .Values.ui.ingressHost }}
+{{ if .Values.ui.enabled }}
+{{ if .Values.ui.ingress.enabled }}
 ---
 apiVersion: v1
 kind: Service
@@ -13,4 +14,5 @@ spec:
   ports:
     - port: 3000
       protocol: TCP
+{{ end }}
 {{ end }}

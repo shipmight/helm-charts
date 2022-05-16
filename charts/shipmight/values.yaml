@@ -1,52 +1,55 @@
-# yaml-language-server: $schema=values.schema.json
-
 image:
   registry: ghcr.io
   repository: shipmight/shipmight
-  tag: "0.1.16"
+  tag: "0.2.0"
   pullPolicy: IfNotPresent
   pullSecrets: []
 
-auth:
+config:
   initialAdminUser: admin
   initialAdminPass: admin
   jwtSecret: ""
 
-autoUpdate:
-  enabled: true
-  repository: "https://shipmight.github.io/helm-charts"
+  selfUpdateRepository: "https://shipmight.github.io/helm-charts"
+
+  lokiEndpoint: ""
+
+  readableUuids: true
+  uuidLength: 5
 
 ui:
-  ingressPath: shipmight
-  ingressHost: ""
-  # Deployment params
+  enabled: true
+
   replicas: 1
+
   resources:
     limits: { memory: "100Mi", cpu: "100m" }
     requests: { memory: "75Mi", cpu: "10m" }
 
-domains:
-  ingressClass: ingress-nginx
+  ingress:
+    enabled: true
+    extraAnnotations: {}
+    extraLabels: {}
 
-loki:
-  endpoint: http://shipmight-loki:3100
+    path: /shipmight
+    pathType: Prefix
 
-acmeClusterIssuer:
-  enabled: false
-  adminEmailAddress: ""
-  name: "Let’s Encrypt"
-  server: "https://acme-v02.api.letsencrypt.org/directory"
+    hosts: []
+
+    tls: []
 
 api:
-  readableUuids: true
-  uuidLength: 5
-  # Deployment params
+  enabled: true
+
   replicas: 1
+
   resources:
     limits: { memory: "400Mi", cpu: "100m" }
     requests: { memory: "75Mi", cpu: "10m" }
 
 install:
+  enabled: true
+
   resources:
     limits: { memory: "100Mi", cpu: "100m" }
     requests: { memory: "75Mi", cpu: "10m" }
