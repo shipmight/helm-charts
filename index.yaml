@@ -2,6 +2,14 @@ apiVersion: v1
 entries:
   shipmight:
   - apiVersion: v2
+    created: "2022-05-16T10:53:23.70098864Z"
+    digest: 37dbfd12cdd22961cd51d1a6bbce99146539e16b8117cd9e831850330865a5f8
+    kubeVersion: '>= 1.21.4 < 1.22.0'
+    name: shipmight
+    urls:
+    - https://github.com/shipmight/helm-charts/releases/download/shipmight-0.2.1/shipmight-0.2.1.tgz
+    version: 0.2.1
+  - apiVersion: v2
     created: "2022-05-16T10:34:26.031483953Z"
     digest: cc4d0b15fcb1b453f1e76855de5a71e81bed12c576eaf97e4ebfe5457f846fa8
     kubeVersion: '>= 1.21.4 < 1.22.0'
@@ -342,4 +350,4 @@ entries:
     urls:
     - https://github.com/shipmight/helm-charts/releases/download/shipmight-stack-0.1.2/shipmight-stack-0.1.2.tgz
     version: 0.1.2
-generated: "2022-05-16T10:38:20.217660825Z"
+generated: "2022-05-16T10:53:23.701205742Z"
