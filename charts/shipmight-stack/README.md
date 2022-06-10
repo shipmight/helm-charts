@@ -1,6 +1,8 @@
-# Shipmight Stack Helm Chart
+# Shipmight stack (Helm Chart)
 
-This chart installs Shipmight and the following optional resources:
+<img alt="Logos of components in Shipmight stack" src="../images/chart-shipmight-stack.png" height="64" />
+
+This chart installs Shipmight and the following (optional) dependencies:
 
 - Ingress-NGINX (enabled by default)
 - Loki
@@ -8,9 +10,15 @@ This chart installs Shipmight and the following optional resources:
 - Cert-Manager
 - Metrics Server
 
-This is the recommended installation chart for most users, because it comes pre-configured with all the dependencies.
+This is the recommended installation chart for most users, because it comes pre-configured so you can simply enable the dependencies you need.
 
-For a standalone chart of Shipmight only, see [Shipmight](../shipmight/README.md).
+## Usage
+
+```bash
+helm repo add shipmight https://shipmight.github.io/helm-charts
+helm repo update
+helm install shipmight shipmight/shipmight-stack
+```
 
 ## Options
 
