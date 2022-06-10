@@ -1,6 +1,6 @@
 # Shipmight stack (Helm Chart)
 
-<img alt="Logos of components in Shipmight stack" src="../images/chart-shipmight-stack.png" height="64" />
+<img alt="Logos of components in Shipmight stack" src="https://github.com/shipmight/helm-charts/raw/master/images/chart-shipmight-stack.png" height="64" />
 
 This chart installs Shipmight and the following (optional) dependencies:
 
