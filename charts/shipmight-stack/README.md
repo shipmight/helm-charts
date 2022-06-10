@@ -26,11 +26,11 @@ helm install shipmight shipmight/shipmight-stack
 
 This chart does not have any configuration of its own. All configuration is done via dependency charts.
 
-| Option             | Description                                                                                                                       |
-| ------------------ | --------------------------------------------------------------------------------------------------------------------------------- |
-| `shipmight.*`      | See [shipmight/values.yaml](../shipmight/values.yaml)                                                                             |
-| `ingress-nginx.*`  | See [ingress-nginx/values.yaml](https://github.com/nginxinc/kubernetes-ingress/blob/master/deployments/helm-chart/values.yaml)    |
-| `loki.*`           | See [loki/values.yaml](https://github.com/grafana/helm-charts/blob/main/charts/loki/values.yaml)                                  |
-| `promtail.*`       | See [promtail/values.yaml](https://github.com/grafana/helm-charts/blob/main/charts/promtail/values.yaml)                          |
-| `cert-manager.*`   | See [cert-manager/values.yaml](https://github.com/jetstack/cert-manager/blob/master/deploy/charts/cert-manager/values.yaml)       |
-| `metrics-server.*` | See [metrics-server/values.yaml](https://github.com/kubernetes-sigs/metrics-server/blob/master/charts/metrics-server/values.yaml) |
+| Option             | Description                                                                                                                                                |
+| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `shipmight.*`      | See [shipmight/values.yaml](../shipmight/values.yaml)                                                                                                      |
+| `ingress-nginx.*`  | See [ingress-nginx/values.yaml](https://github.com/kubernetes/ingress-nginx/blob/helm-chart-4.0.18/charts/ingress-nginx/values.yaml)                       |
+| `loki.*`           | See [loki/values.yaml](https://github.com/grafana/helm-charts/blob/loki-2.10.1/charts/loki/values.yaml)                                                    |
+| `promtail.*`       | See [promtail/values.yaml](https://github.com/grafana/helm-charts/blob/promtail-2.2.0/charts/promtail/values.yaml)                                         |
+| `cert-manager.*`   | See [cert-manager/values.yaml](https://github.com/cert-manager/cert-manager/blob/v1.7.1/deploy/charts/cert-manager/values.yaml)                            |
+| `metrics-server.*` | See [metrics-server/values.yaml](https://github.com/kubernetes-sigs/metrics-server/blob/metrics-server-helm-chart-3.8.2/charts/metrics-server/values.yaml) |
