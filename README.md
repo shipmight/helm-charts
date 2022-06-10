@@ -1,5 +1,7 @@
 ![Header: Shipmight Helm charts](images/header-image.png)
 
+[Home](https://shipmight.com)     [Docs](https://shipmight.com/docs)     [GitHub](https://github.com/shipmight)     [Twitter](https://twitter.com/shipmight)
+
 ## Repository
 
 The Helm repository is hosted in GitHub Pages and can be added via:
