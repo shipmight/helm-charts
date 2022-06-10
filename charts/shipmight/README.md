@@ -1,8 +1,10 @@
-# Shipmight Helm Chart
+# Shipmight (Helm Chart)
+
+<img alt="Logos of components in Shipmight" src="https://github.com/shipmight/helm-charts/raw/master/images/chart-shipmight.png" height="64" />
 
 This chart install Shipmight but no additional resources. It is suitable for customizing your setup.
 
-See also [Shipmight stack](../shipmight-stack/README.md).
+It's recommended to use the [Shipmight stack](../shipmight-stack/README.md) chart. You can pick which dependencies you want (if any).
 
 ## Options
 
@@ -18,9 +20,9 @@ See also [Shipmight stack](../shipmight-stack/README.md).
 
 ### Shipmight configuration
 
-| Option     | Default | Description                                                                           |
-| ---------- | ------- | ------------------------------------------------------------------------------------- |
-| `config.*` |         | Refer to [Shipmight documentation](https://shipmight.com/docs/configuring-shipmight). |
+| Option     | Default | Description                                                                          |
+| ---------- | ------- | ------------------------------------------------------------------------------------ |
+| `config.*` |         | Refer to [Shipmight documentation](https://shipmight.com/docs/configuring-shipmight) |
 
 ### Components
 
