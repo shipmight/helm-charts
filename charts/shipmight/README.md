@@ -24,8 +24,8 @@ See also [Shipmight stack](../shipmight-stack/README.md).
 
 ### Components
 
-| Option      | Default                             | Description |
-| ----------- | ----------------------------------- | ----------- |
-| `ui.*`      | Refer to [values.yaml](values.yaml) |             |
-| `admin.*`   | Refer to [values.yaml](values.yaml) |             |
-| `install.*` | Refer to [values.yaml](values.yaml) |             |
+| Option      | Default | Description                         |
+| ----------- | ------- | ----------------------------------- |
+| `ui.*`      |         | Refer to [values.yaml](values.yaml) |
+| `admin.*`   |         | Refer to [values.yaml](values.yaml) |
+| `install.*` |         | Refer to [values.yaml](values.yaml) |
