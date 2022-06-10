@@ -1,12 +1,8 @@
-# Shipmight Helm charts
-
-The code is provided as-is with no warranties.
-
-See [**shipmight.com →**](https://shipmight.com) for documentation.
+![Header: Shipmight Helm charts](images/header-image.png)
 
 ## Repository
 
-The Helm repository can be added via:
+The Helm repository is hosted in GitHub Pages and can be added via:
 
 ```bash
 helm repo add shipmight https://shipmight.github.io/helm-charts
@@ -14,11 +10,21 @@ helm repo add shipmight https://shipmight.github.io/helm-charts
 
 ## Charts
 
-- [**Shipmight stack →**](./charts/shipmight-stack/README.md) (Recommended)  
-  Shipmight, Ingress-NGINX, Loki, Promtail, Cert-Manager, Metrics Server
+### Shipmight stack
 
-- [**Shipmight →**](./charts/shipmight/README.md)  
-  Shipmight
+[![Logos of components in Shipmight stack](images/chart-shipmight-stack.png)](charts/shipmight-stack/README.md)
+
+Recommended installation method. Included (optional) dependencies: Grafana Loki, Promtail, Cert-Manager, Ingress-NGINX, Metrics Server.
+
+[**charts/shipmight-stack →**](charts/shipmight-stack/README.md)
+
+### Shipmight
+
+[![Logos of components in Shipmight](images/chart-shipmight.png)](charts/shipmight/README.md)
+
+Shipmight without dependencies. Used as a dependency in Shipmight stack.
+
+[**charts/shipmight →**](charts/shipmight/README.md)
 
 ## License
 
