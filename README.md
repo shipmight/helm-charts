@@ -1,12 +1,10 @@
-# Shipmight Helm charts
+![Header: Shipmight Helm charts](images/header-image.png)
 
-The code is provided as-is with no warranties.
-
-See [**shipmight.com →**](https://shipmight.com) for documentation.
+[Home](https://shipmight.com)     [Docs](https://shipmight.com/docs)     [GitHub](https://github.com/shipmight)     [Twitter](https://twitter.com/shipmight)
 
 ## Repository
 
-The Helm repository can be added via:
+The Helm repository is hosted in GitHub Pages and can be added via:
 
 ```bash
 helm repo add shipmight https://shipmight.github.io/helm-charts
@@ -14,8 +12,24 @@ helm repo add shipmight https://shipmight.github.io/helm-charts
 
 ## Charts
 
-- [**Shipmight stack →**](./charts/shipmight-stack/README.md) (Recommended)  
-  Shipmight, Ingress-NGINX, Loki, Promtail, Cert-Manager, Metrics Server
+### Shipmight stack
 
-- [**Shipmight →**](./charts/shipmight/README.md)  
-  Shipmight
+<a href="charts/shipmight-stack"><img alt="Logos of components in Shipmight stack" src="images/chart-shipmight-stack.png" height="64" /></a>
+
+Recommended installation method. Included (optional) dependencies: Grafana Loki, Promtail, Cert-Manager, Ingress-NGINX, Metrics Server.
+
+[**charts/shipmight-stack →**](charts/shipmight-stack)
+
+### Shipmight
+
+<a href="charts/shipmight"><img alt="Logos of components in Shipmight" src="images/chart-shipmight.png" height="64" /></a>
+
+Shipmight without dependencies. Used as a dependency in Shipmight stack.
+
+[**charts/shipmight →**](charts/shipmight)
+
+## License
+
+Contents of this repository are released under the Apache-2.0 license. See [LICENSE](LICENSE).
+
+Software installed by these charts, including dependency charts, may be licensed differently. Refer to their respective license information.
