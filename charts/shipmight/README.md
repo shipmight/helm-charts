@@ -12,15 +12,15 @@ For most users it is recommended to use the [Shipmight stack](../shipmight-stack
 
 Many of the Shipmight configuration options are explained in the documentation, see [Configuring Shipmight](https://shipmight.com/docs/configuring-shipmight).
 
-| Option                        | Default                                     | Description                                             |
-| ----------------------------- | ------------------------------------------- | ------------------------------------------------------- |
-| `config.initialAdminUser`     | `"admin"`                                   | Initial user username                                   |
-| `config.initialAdminPass`     | `"admin"`                                   | Initial user password                                   |
-| `config.jwtSecret`            | `""`                                        | Secret string for signing JWTs, auto-generated if empty |
-| `config.selfUpdateRepository` | `"https://shipmight.github.io/helm-charts"` | Helm chart repository used for self-update              |
-| `config.lokiEndpoint`         | `""`                                        | Loki API endpoint, if available                         |
-| `config.readableUuids`        | `true`                                      | Prefix random IDs with a slug of the entity name        |
-| `config.uuidLength`           | `5`                                         | Random ID length                                        |
+| Option                        | Default                                     | Description                                                                    |
+| ----------------------------- | ------------------------------------------- | ------------------------------------------------------------------------------ |
+| `config.initialAdminUser`     | `"admin"`                                   | Initial user username                                                          |
+| `config.initialAdminPass`     | `"admin"`                                   | Initial user password                                                          |
+| `config.jwtSecret`            | `""`                                        | Secret string for signing JWTs, auto-generated if empty                        |
+| `config.selfUpdateRepository` | `"https://shipmight.github.io/helm-charts"` | Helm chart repository used for self-update, leave empty to disable self-update |
+| `config.lokiEndpoint`         | `""`                                        | Loki API endpoint, if available                                                |
+| `config.readableUuids`        | `true`                                      | Prefix random IDs with a slug of the entity name                               |
+| `config.uuidLength`           | `5`                                         | Random ID length                                                               |
 
 ### Image
 
