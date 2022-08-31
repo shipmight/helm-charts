@@ -1,7 +1,7 @@
 image:
   registry: ghcr.io
   repository: shipmight/shipmight
-  tag: "0.4.0"
+  tag: "0.5.0"
   pullPolicy: IfNotPresent
   pullSecrets: []
 
