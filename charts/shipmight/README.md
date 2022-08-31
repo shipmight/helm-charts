@@ -4,9 +4,11 @@
 
 This chart installs Shipmight but no additional resources. It can be used in scenarios where Shipmight stack is not suitable.
 
-For most users it is recommended to use the [Shipmight stack](../shipmight-stack/README.md) chart. You can pick which dependencies you want (if any).
+For most users it is recommended to use the [Shipmight stack](../shipmight-stack) chart. You can pick which dependencies you want (if any).
 
 ## Options
+
+> **Note:** When using the [Shipmight stack](../shipmight-stack) chart, you need to prepend `shipmight.` into the option names, because this chart exists as a dependency in that chart. For example, `config.initialAdminUser` would be `shipmight.config.initialAdminUser`.
 
 ### Shipmight
 
