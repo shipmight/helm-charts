@@ -23,15 +23,15 @@ spec:
     - http:
         paths:
         - pathType: {{ $.Values.ui.ingress.pathType | quote }}
-          {{ if gt (len $.Values.ui.ingress.hosts) 0 -}}
-          host: {{ index $.Values.ui.ingress.hosts $i }}
-          {{ end -}}
           path: {{ $.Values.ui.ingress.path | quote }}
           backend:
             service:
               name: shipmight-ui
               port:
                 number: 3000
+      {{ if gt (len $.Values.ui.ingress.hosts) 0 -}}
+      host: {{ index $.Values.ui.ingress.hosts $i }}
+      {{- end -}}
 {{- end }}
 {{ end }}
 {{ end }}
