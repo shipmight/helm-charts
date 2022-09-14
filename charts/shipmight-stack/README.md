@@ -22,6 +22,67 @@ helm repo update
 helm install shipmight shipmight/shipmight-stack
 ```
 
+## Examples
+
+### Default installation (includes Ingress-NGINX)
+
+```bash
+helm install shipmight shipmight/shipmight-stack
+```
+
+### Enable Loki
+
+```bash
+helm install shipmight shipmight/shipmight-stack \
+  --set promtail.enabled=true \
+  --set loki.enabled=true \
+  --set loki.config.storage_config.aws.s3=s3://<access-key>:<secret-access-key>@<s3-endpoint>/<bucket-name> \
+  --set shipmight.config.lokiEndpoint=http://shipmight-loki:3100
+```
+
+More information can be found in the [docs](https://shipmight.com/docs/configuring-loki).
+
+### Enable Cert-Manager
+
+```bash
+helm install shipmight shipmight/shipmight-stack \
+  --set cert-manager.enabled=true
+# Create a ClusterIssuer with `cert-manager-issuer.shipmight.com/id: <id>` annotation
+kubectl create -f your-cluster-issuer.yaml
+```
+
+More information and example ACME (Let's Encrypt) issuer YAML can be found in the [docs](https://shipmight.com/docs/configuring-cert-manager).
+
+### Enable Metrics Server
+
+Note: if your cloud provider offers a one-click installation of Metrics Server, use it instead. Installation via Helm may require additional configuration depending on your cloud platform.
+
+```bash
+helm install shipmight shipmight/shipmight-stack \
+  --set metrics-server.enabled=true
+```
+
+More information can be found in the [docs](https://shipmight.com/docs/configuring-metrics-server).
+
+### Disable Ingress-NGINX
+
+```bash
+helm install shipmight shipmight/shipmight-stack \
+  --set ingress-nginx.enabled=false
+```
+
+### Configure Shipmight
+
+Shipmight is a dependency chart, so prepend all configuration values with `shipmight.`. For example:
+
+```bash
+helm install shipmight shipmight/shipmight-stack \
+  --set shipmight.config.selfUpdateRepository=... \
+  --set shipmight.image.tag=...
+```
+
+See the [shipmight](../shipmight) chart for descriptions of available configuration options.
+
 ## Options
 
 ### Dependencies
