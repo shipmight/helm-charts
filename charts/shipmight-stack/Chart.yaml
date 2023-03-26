@@ -1,12 +1,12 @@
 apiVersion: v2
 name: shipmight-stack
-version: "0.5.1"
-kubeVersion: ">= 1.23.0 < 1.24.0"
+version: "0.6.0"
+kubeVersion: ">= 1.24.0 < 1.26.0"
 
 dependencies:
   - repository: "https://shipmight.github.io/helm-charts"
     name: shipmight
-    version: "0.5.1"
+    version: "0.6.0"
     condition: shipmight.enabled
   - repository: "https://kubernetes.github.io/ingress-nginx"
     name: ingress-nginx
